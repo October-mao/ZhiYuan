@@ -1,8 +1,8 @@
 package com.mno.dao;
 
 
-import com.mno.util.BeanUtil;
 import com.mno.util.MyDbUtil;
+import org.apache.commons.beanutils.BeanUtils;
 
 import java.lang.reflect.ParameterizedType;
 import java.sql.*;
@@ -55,7 +55,7 @@ public class BaseDao<T> {
                 for (int i = 1; i <= columnCount; i++) {
                     String key = rsmd.getColumnLabel(i);
                     Object value = rs.getObject(key);
-                    BeanUtil.setProperty(entity, key, value);
+                    BeanUtils.setProperty(entity, key, value);
 
                 }
             }
@@ -90,7 +90,7 @@ public class BaseDao<T> {
                 for (int i = 1; i <= columnCount; i++) {
                     String key = rsmd.getColumnLabel(i);
                     Object value = rs.getObject(key);
-                    BeanUtil.setProperty(entity, key, value);
+                    BeanUtils.setProperty(entity, key, value);
                 }
                 list.add(entity);
             }

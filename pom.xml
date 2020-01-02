@@ -32,6 +32,12 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.18</version>
     </dependency>
+    <dependency>
+      <groupId>commons-beanutils</groupId>
+      <artifactId>commons-beanutils</artifactId>
+      <version>1.9.4</version>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -69,5 +75,15 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>8</source>
+          <target>8</target>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>

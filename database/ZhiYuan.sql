@@ -13,12 +13,10 @@
 
 
 -- Dumping database structure for ZhiYuan
-DROP DATABASE IF EXISTS `ZhiYuan`;
 CREATE DATABASE IF NOT EXISTS `ZhiYuan` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `ZhiYuan`;
 
 -- Dumping structure for table ZhiYuan.student
-DROP TABLE IF EXISTS `student`;
 CREATE TABLE IF NOT EXISTS `student` (
   `id` int(11) NOT NULL DEFAULT '0',
   `mathScore` int(11) NOT NULL DEFAULT '0',
@@ -28,6 +26,8 @@ CREATE TABLE IF NOT EXISTS `student` (
   `counter` int(11) NOT NULL DEFAULT '0',
   `totalScore` int(11) NOT NULL DEFAULT '0',
   `userId` int(11) NOT NULL DEFAULT '0',
+  `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `insertTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -37,7 +37,6 @@ DELETE FROM `student`;
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 
 -- Dumping structure for table ZhiYuan.user
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nickname` varchar(16) NOT NULL DEFAULT '',
@@ -51,12 +50,11 @@ CREATE TABLE IF NOT EXISTS `user` (
   UNIQUE KEY `loginName` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table ZhiYuan.user: ~0 rows (大约)
+-- Dumping data for table ZhiYuan.user: ~2 rows (大约)
 DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `nickname`, `username`, `password`, `role`, `remark`, `insertTime`, `updateTime`) VALUES
-	(1, 'qqq', 'qqqq', 'qqqqq', 'admin', '', '2020-01-02 01:46:19', '2020-01-02 01:46:19'),
-	(2, 'asdasd', 'qqasdasdqq', 'qqqasdasqq', 'admin', '', '2020-01-02 01:48:35', '2020-01-02 01:48:35');
+	(1, '考试院', 'admin', 'admin', 'admin', '', '2020-01-02 01:46:19', '2020-01-02 07:31:04');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

@@ -72,11 +72,7 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
     public static void main(String[] args) {
         UserDao userDao = new UserDaoImpl();
         List<User> a = userDao.getListByRole("admin");
-        for (User v : a) {
-            System.out.println(v.getNickname());
-        }
-        int count = userDao.getCount();
-        System.out.println(count);
+        System.out.println(a.get(1).getInsertTime());
 
     }
 }
