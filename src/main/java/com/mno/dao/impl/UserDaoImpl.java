@@ -26,9 +26,9 @@ import java.util.List;
 public class UserDaoImpl extends BaseDao<User> implements UserDao {
 
     @Override
-    public void getOneById(int id) {
-        User oneData = getOneData("select * from user");
-        System.out.println(oneData.getNickname());
+    public User getOneById(int id) {
+        User oneData = getOneData("select * from user where id=?", id);
+        return oneData;
     }
 
     @Override
@@ -50,6 +50,12 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
     public int getCount() {
         Number count = (Number) getOneColumn("select count(*) from user");
         return count.intValue();
+    }
+
+    @Override
+    public boolean deleteById(int id) {
+        int iud = iud("delete * from user where id=?", id);
+        return iud > 0 ? true:false;
     }
 
     public static void main(String[] args) {

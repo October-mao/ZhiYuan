@@ -22,12 +22,14 @@ import java.util.List;
  * @since 1.0.0
  */
 public interface UserDao {
-    void getOneById(int id);
+    User getOneById(int id);
 
     int insertOne(User user);
 
     List<User> getListByRole(String role);
 
     int getCount();
+
+    boolean deleteById(int id);
 
 }
