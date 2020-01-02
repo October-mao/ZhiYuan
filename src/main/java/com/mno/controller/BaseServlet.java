@@ -54,14 +54,14 @@ public class BaseServlet extends HttpServlet {
             resp.getWriter().print(om.writeValueAsString(invoke));
         } catch (SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | IOException e) {
             e.printStackTrace();
-        }
-        finally {
             try {
                 resp.getWriter().print(new ObjectMapper().writeValueAsString(new JsonResult<>(ResultCode.NOT_FOUND)));
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (IOException ex) {
+                ex.printStackTrace();
             }
+
         }
+
 
     }
 }

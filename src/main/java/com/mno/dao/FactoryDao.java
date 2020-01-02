@@ -9,6 +9,8 @@
  */
 package com.mno.dao;
 
+import com.mno.dao.impl.UserDaoImpl;
+
 /**
  * DESC〈一句话功能简述〉<br>
  * 〈dao工厂类〉
@@ -18,4 +20,7 @@ package com.mno.dao;
  * @since 1.0.0
  */
 public class FactoryDao {
+    public static UserDao getUserDao() {
+        return new UserDaoImpl();
+    }
 }

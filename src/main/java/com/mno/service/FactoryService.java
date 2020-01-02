@@ -9,6 +9,8 @@
  */
 package com.mno.service;
 
+import com.mno.service.impl.UserServiceImpl;
+
 /**
  * DESC〈一句话功能简述〉<br>
  * 〈服务工厂类〉
@@ -18,4 +20,8 @@ package com.mno.service;
  * @since 1.0.0
  */
 public class FactoryService {
+    public static UserService getUserService() {
+        return new UserServiceImpl();
+    }
+
 }

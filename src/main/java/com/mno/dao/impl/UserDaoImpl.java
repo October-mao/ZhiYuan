@@ -66,7 +66,12 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
     @Override
     public boolean deleteById(int id) {
         int iud = iud("delete * from user where id=?", id);
-        return iud > 0 ? true:false;
+        return iud > 0 ? true : false;
+    }
+
+    @Override
+    public User getOneByUsername(String username) {
+        return getOneData("select * from user where username=?", username);
     }
 
     public static void main(String[] args) {
