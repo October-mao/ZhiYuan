@@ -33,22 +33,21 @@ public class BaseServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) {
         try {
+            if ("OPTIONS".equals(req.getMethod())) {
+                return;
+            }
             // 加载类
-            //设置请求编码格式
-            req.setCharacterEncoding("utf-8");
-            //设置响应编码格式
-            resp.setContentType("application/json;charset=UTF-8");
             //获取用户传递的请求参数
-            String opType = req.getParameter("type");
-            if (StringUtils.isNullOrEmpty(opType)) {
+            String reqMethod = req.getParameter("method");
+            if (StringUtils.isNullOrEmpty(reqMethod)) {
                 resp.getWriter().print(new ObjectMapper().writeValueAsString(new JsonResult<>(ResultCode.NOT_FOUND)));
                 return;
             }
+            //通过反射取得类方法
             Class<?> printClass = this.getClass();
-            ;
-            Method method = printClass.getDeclaredMethod(opType, HttpServletRequest.class, HttpServletResponse.class);
-            //设置方法的访问权限
+            Method method = printClass.getDeclaredMethod(reqMethod, HttpServletRequest.class, HttpServletResponse.class);
             method.setAccessible(true);
+            //执行方法
             Object invoke = method.invoke(this, req, resp);
             ObjectMapper om = new ObjectMapper();
             resp.getWriter().print(om.writeValueAsString(invoke));

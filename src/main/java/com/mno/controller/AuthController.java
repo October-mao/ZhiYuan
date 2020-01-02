@@ -20,6 +20,8 @@ import com.mysql.cj.util.StringUtils;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * DESC〈一句话功能简述〉<br>
@@ -41,14 +43,16 @@ public class AuthController extends BaseServlet {
             UserService userService = FactoryService.getUserService();
             String token = userService.login(user);
             if (StringUtils.isNullOrEmpty(token)) {
-                return new JsonResult(ResultCode.INVALID_AUTH);
+                return new JsonResult(ResultCode.PARAMS_ERROR);
             } else {
-                return new JsonResult(token);
+                Map<String, Object> map = new HashMap<>(1);
+                map.put("token", token);
+                return new JsonResult(map);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return new JsonResult();
+        return new JsonResult(ResultCode.UNKNOWN_ERROR);
     }
 
 }

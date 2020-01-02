@@ -1,5 +1,8 @@
 package com.mno.util;
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
@@ -10,22 +13,32 @@ import java.util.Properties;
  * @date 2020-01-01
  */
 public class MyDbUtil {
-    public static void main(String[] args) {
-        MyDbUtil.getConnection();
-    }
+    private static HikariDataSource dataSource;
 
-    public static Connection getConnection() {
+    static {
         try {
             Properties pop = new Properties();
             InputStream in = MyDbUtil.class.getClassLoader().getResourceAsStream("jdbc.properties");
             pop.load(in);
-            String driverClass = pop.getProperty("class");
-            String jdbcUrl = pop.getProperty("url");
-            String user = pop.getProperty("user");
-            String password = pop.getProperty("password");
-            Class.forName(driverClass);
-            return DriverManager.getConnection(jdbcUrl, user, password);
-        } catch (IOException | SQLException | ClassNotFoundException e) {
+            HikariConfig config = new HikariConfig();
+            config.setJdbcUrl(pop.getProperty("url"));
+            config.setUsername(pop.getProperty("username"));
+            config.setPassword(pop.getProperty("password"));
+            config.setDriverClassName(pop.getProperty("class"));
+            config.addDataSourceProperty("cachePrepStmts", "true");
+            config.addDataSourceProperty("prepStmtCacheSize", "250");
+            config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
+            dataSource = new HikariDataSource(config);
+        } catch (IOException  e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static Connection getConnection() {
+        try {
+            return dataSource.getConnection();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;

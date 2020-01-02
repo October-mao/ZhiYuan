@@ -36,4 +36,10 @@ public class UserServiceImpl implements UserService {
         }
         return "";
     }
+
+    @Override
+    public User getOneById(int id) {
+        return userDao.getOneById(id);
+    }
+
 }

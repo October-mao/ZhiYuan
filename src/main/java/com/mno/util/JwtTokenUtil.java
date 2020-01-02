@@ -48,19 +48,19 @@ public class JwtTokenUtil {
         return username;
     }
 
-    public static long getUserIdFromToken(String token) {
-        long userId;
+    public static Integer getUserIdFromToken(String token) {
+        Integer userId;
         try {
             final Claims claims = getClaimsFromToken(token);
-            userId = Long.parseLong(claims.get(CLAIM_KEY_USERID).toString());
+            userId = Integer.parseInt(claims.get(CLAIM_KEY_USERID).toString());
         } catch (Exception e) {
             e.printStackTrace();
-            userId = 0;
+            userId = null;
         }
         return userId;
     }
 
-    public static Date getCreatedDateFromToken(String token) {
+    private static Date getCreatedDateFromToken(String token) {
         Date created;
         try {
             final Claims claims = getClaimsFromToken(token);
@@ -71,7 +71,7 @@ public class JwtTokenUtil {
         return created;
     }
 
-    public static Date getExpirationDateFromToken(String token) {
+    private static Date getExpirationDateFromToken(String token) {
         Date expiration;
         try {
             final Claims claims = getClaimsFromToken(token);
@@ -101,8 +101,11 @@ public class JwtTokenUtil {
         return new Date(System.currentTimeMillis() + TokenConfig.EXPIRATION_TIME * 1000);
     }
 
-    private static Boolean isTokenExpired(String token) {
+    public static Boolean isTokenExpired(String token) {
         final Date expiration = getExpirationDateFromToken(token);
+        if (expiration == null) {
+            return true;
+        }
         return expiration.before(new Date());
     }
 
@@ -147,7 +150,7 @@ public class JwtTokenUtil {
      * 验证令牌
      *
      * @param token       令牌
-     * @param userDetails 用户
+     * @param user 用户
      * @return 是否有效
      */
     public static Boolean validateToken(String token, User user) {

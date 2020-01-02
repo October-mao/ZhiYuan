@@ -21,4 +21,5 @@ import com.mno.model.User;
  */
 public interface UserService {
     String login(User user);
+    User getOneById(int id);
 }
