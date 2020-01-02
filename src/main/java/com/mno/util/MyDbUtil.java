@@ -7,7 +7,7 @@ import java.util.Properties;
 
 /**
  * @author 10418
- * @date 2018-05-23
+ * @date 2020-01-01
  */
 public class MyDbUtil {
     public static void main(String[] args) {
