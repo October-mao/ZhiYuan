@@ -22,7 +22,7 @@ import java.util.List;
  * @since 1.0.0
  */
 public interface UserDao {
-    void getOneById(int id);
+    User getOneById(int id);
 
     int insertOne(User user);
 
@@ -31,5 +31,7 @@ public interface UserDao {
     int getCount();
 
     boolean updatePwd(int id,String pwd);
+
+    boolean deleteById(int id);
 
 }
