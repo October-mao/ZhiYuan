@@ -30,4 +30,6 @@ public interface UserDao {
 
     int getCount();
 
+    boolean updatePwd(int id,String pwd);
+
 }

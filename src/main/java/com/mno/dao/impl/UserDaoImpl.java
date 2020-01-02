@@ -52,6 +52,17 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
         return count.intValue();
     }
 
+    @Override
+    public boolean updatePwd(int id, String pwd) {
+        int iud = iud("update user set password=? where id=?", pwd, id);
+        if (iud > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
     public static void main(String[] args) {
         UserDao userDao = new UserDaoImpl();
         List<User> a = userDao.getListByRole("admin");
