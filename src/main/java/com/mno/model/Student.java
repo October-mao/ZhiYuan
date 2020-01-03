@@ -6,7 +6,7 @@ import java.sql.Timestamp;
  * 学生对象
  * 〈〉
  *
- * @author 10418
+ * @author mao
  * @create 2020-01-02
  * @since 1.0.0
  */
