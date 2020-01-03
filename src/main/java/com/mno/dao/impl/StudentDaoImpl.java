@@ -8,8 +8,8 @@ import com.mno.model.Student;
  * DESC〈一句话功能简述〉<br>
  * 〈〉
  *
- * @author 10418
- * @create 2020-01-02
+ * @author mao
+ * @create 2020-01-03
  * @since 1.0.0
  */
 public class StudentDaoImpl extends BaseDao<Student> implements StudentDao {

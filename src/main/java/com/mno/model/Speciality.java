@@ -15,8 +15,7 @@ public class Speciality {
     private String name;
     private Integer total;
 
-    public Speciality(Integer id, Integer userId, String name, Integer total) {
-        this.id = id;
+    public Speciality( Integer userId, String name, Integer total) {
         this.userId = userId;
         this.name = name;
         this.total = total;

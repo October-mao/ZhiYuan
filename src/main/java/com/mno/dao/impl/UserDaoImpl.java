@@ -33,10 +33,9 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
 
     @Override
     public int insertOne(User user) {
-        iud("insert into user(nickname,username,password,role) values(?,?,?,?)", user.getNickname()
+        return iud("insert into user(nickname,username,password,role) values(?,?,?,?)", user.getNickname()
                 , user.getUsername(), user.getPassword(), user.getRole()
         );
-        return 0;
     }
 
     @Override
@@ -65,7 +64,7 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
 
     @Override
     public boolean deleteById(int id) {
-        int iud = iud("delete * from user where id=?", id);
+        int iud = iud("delete from user where id=?", id);
         return iud > 0 ? true : false;
     }
 
