@@ -33,4 +33,6 @@ log
 HELP.MD
 mvnw
 mvnw.cmd
-src/main/resources/rebel.xml
+src/main/resources/jdbc.properties
+src/main/webapp/WEB-INF/classes
+
