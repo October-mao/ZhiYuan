@@ -1,7 +1,7 @@
 -- --------------------------------------------------------
--- 主机:                           192.168.74.129
--- 服务器版本:                        8.0.18 - MySQL Community Server - GPL
--- 服务器OS:                        Linux
+-- 主机:                           127.0.0.1
+-- 服务器版本:                        8.0.17 - MySQL Community Server - GPL
+-- 服务器OS:                        Win64
 -- HeidiSQL 版本:                  10.2.0.5599
 -- --------------------------------------------------------
 
@@ -12,11 +12,28 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
--- Dumping database structure for ZhiYuan
-CREATE DATABASE IF NOT EXISTS `ZhiYuan` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `ZhiYuan`;
+-- Dumping database structure for zhiyuan
+CREATE DATABASE IF NOT EXISTS `zhiyuan` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `zhiyuan`;
 
--- Dumping structure for table ZhiYuan.student
+-- Dumping structure for table zhiyuan.speciality
+CREATE TABLE IF NOT EXISTS `speciality` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userId` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(50) NOT NULL DEFAULT '0',
+  `total` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='专业表';
+
+-- Dumping data for table zhiyuan.speciality: ~2 rows (大约)
+DELETE FROM `speciality`;
+/*!40000 ALTER TABLE `speciality` DISABLE KEYS */;
+INSERT INTO `speciality` (`id`, `userId`, `name`, `total`) VALUES
+	(3, 1, '欧阳一', 4),
+	(4, 1, '计算机', 5);
+/*!40000 ALTER TABLE `speciality` ENABLE KEYS */;
+
+-- Dumping structure for table zhiyuan.student
 CREATE TABLE IF NOT EXISTS `student` (
   `id` int(11) NOT NULL DEFAULT '0',
   `mathScore` int(11) NOT NULL DEFAULT '0',
@@ -31,12 +48,12 @@ CREATE TABLE IF NOT EXISTS `student` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table ZhiYuan.student: ~0 rows (大约)
+-- Dumping data for table zhiyuan.student: ~0 rows (大约)
 DELETE FROM `student`;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 
--- Dumping structure for table ZhiYuan.user
+-- Dumping structure for table zhiyuan.user
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nickname` varchar(16) NOT NULL DEFAULT '',
@@ -50,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   UNIQUE KEY `loginName` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table ZhiYuan.user: ~2 rows (大约)
+-- Dumping data for table zhiyuan.user: ~0 rows (大约)
 DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `nickname`, `username`, `password`, `role`, `remark`, `insertTime`, `updateTime`) VALUES
