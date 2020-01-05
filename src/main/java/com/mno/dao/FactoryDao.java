@@ -9,6 +9,7 @@
  */
 package com.mno.dao;
 
+import com.mno.dao.impl.SpecialityDaoImpl;
 import com.mno.dao.impl.UserDaoImpl;
 import com.mno.dao.impl.VoluntaryDaoImpl;
 
@@ -24,7 +25,12 @@ public class FactoryDao {
     public static UserDao getUserDao() {
         return new UserDaoImpl();
     }
+
     public static VoluntaryDao getVoluntaryDao() {
         return new VoluntaryDaoImpl();
+    }
+
+    public static SpecialityDao getSpecialityDao() {
+        return new SpecialityDaoImpl();
     }
 }

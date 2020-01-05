@@ -20,6 +20,14 @@
         <servlet-name>UserController</servlet-name>
         <url-pattern>/user</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>SpecialityController</servlet-name>
+        <servlet-class>com.mno.controller.SpecialityController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SpecialityController</servlet-name>
+        <url-pattern>/speciality</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>VoluntaryController</servlet-name>
