@@ -12,6 +12,7 @@ package com.mno.dao;
 import com.mno.dao.impl.SpecialityDaoImpl;
 import com.mno.dao.impl.StudentDaoImpl;
 import com.mno.dao.impl.UserDaoImpl;
+import com.mno.dao.impl.VoluntaryDaoImpl;
 
 /**
  * DESC〈一句话功能简述〉<br>
@@ -25,7 +26,12 @@ public class FactoryDao {
     public static UserDao getUserDao() {
         return new UserDaoImpl();
     }
-    public static SpecialityDao getSpecialityDao(){
+
+    public static VoluntaryDao getVoluntaryDao() {
+        return new VoluntaryDaoImpl();
+    }
+
+    public static SpecialityDao getSpecialityDao() {
         return new SpecialityDaoImpl();
     }
     public static StudentDao getStudentDao(){

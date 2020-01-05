@@ -12,6 +12,7 @@ package com.mno.service;
 import com.mno.service.impl.SpecialityServiceImpl;
 import com.mno.service.impl.StudentServiceImpl;
 import com.mno.service.impl.UserServiceImpl;
+import com.mno.service.impl.VoluntaryServiceImpl;
 
 /**
  * DESC〈一句话功能简述〉<br>
@@ -26,6 +27,10 @@ public class FactoryService {
         return new UserServiceImpl();
     }
 
+
+    public static VoluntaryService getVoluntaryService() {
+        return new VoluntaryServiceImpl();
+    }
     public static SpecialityService getSpecialityService(){
         return new SpecialityServiceImpl();
     }
