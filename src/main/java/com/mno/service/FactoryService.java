@@ -10,6 +10,7 @@
 package com.mno.service;
 
 import com.mno.service.impl.UserServiceImpl;
+import com.mno.service.impl.VoluntaryServiceImpl;
 
 /**
  * DESC〈一句话功能简述〉<br>
@@ -22,6 +23,10 @@ import com.mno.service.impl.UserServiceImpl;
 public class FactoryService {
     public static UserService getUserService() {
         return new UserServiceImpl();
+    }
+
+    public static VoluntaryService getVoluntaryService() {
+        return new VoluntaryServiceImpl();
     }
 
 }

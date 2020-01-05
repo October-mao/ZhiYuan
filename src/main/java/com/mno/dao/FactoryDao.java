@@ -10,6 +10,7 @@
 package com.mno.dao;
 
 import com.mno.dao.impl.UserDaoImpl;
+import com.mno.dao.impl.VoluntaryDaoImpl;
 
 /**
  * DESC〈一句话功能简述〉<br>
@@ -22,5 +23,8 @@ import com.mno.dao.impl.UserDaoImpl;
 public class FactoryDao {
     public static UserDao getUserDao() {
         return new UserDaoImpl();
+    }
+    public static VoluntaryDao getVoluntaryDao() {
+        return new VoluntaryDaoImpl();
     }
 }

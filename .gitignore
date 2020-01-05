@@ -35,4 +35,5 @@ mvnw
 mvnw.cmd
 src/main/resources/jdbc.properties
 src/main/webapp/WEB-INF/classes
+src/main/resources/rebel.xml
 
