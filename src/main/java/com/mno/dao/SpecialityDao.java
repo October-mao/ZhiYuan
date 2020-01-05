@@ -21,4 +21,6 @@ public interface SpecialityDao {
     boolean deleteById(int id);
 
     boolean updateOne(Speciality speciality);
+
+    List<Speciality> getListById(Integer id);
 }

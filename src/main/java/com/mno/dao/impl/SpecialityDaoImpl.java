@@ -21,6 +21,12 @@ public class SpecialityDaoImpl extends BaseDao<Speciality> implements Speciality
     }
 
     @Override
+    public List<Speciality> getListById(Integer id) {
+        List<Speciality> listData = getListData("select * from speciality where id=?", id);
+        return listData;
+    }
+
+    @Override
     public int insertOne(Speciality speciality) {
 
         return iud("insert into speciality(userId,name,total) values(?,?,?)", speciality.getUserId()
@@ -45,10 +51,8 @@ public class SpecialityDaoImpl extends BaseDao<Speciality> implements Speciality
 
     public static void main(String[] args) {
         SpecialityDao specialityDao = new SpecialityDaoImpl();
-        List<Speciality> list = specialityDao.getListByUserId(1);
-        Speciality speciality = list.get(0);
-        speciality.setName("欧阳一");
-        System.out.println(specialityDao.updateOne(speciality));
+        List<Speciality> list = specialityDao.getListById(3);
+        System.out.println(list.get(0).getName());
     }
 
 }

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface SpecialityService {
     List<Speciality> getListByUserId(Integer userId);
+    List<Speciality> getListById(Integer id);
 }

@@ -11,9 +11,15 @@ import java.util.List;
 
 public class SpecialityController extends BaseServlet {
     private SpecialityService specialityService = FactoryService.getSpecialityService();
-    public JsonResult info(HttpServletRequest req, HttpServletResponse resp) {
+    public JsonResult infoByUserId(HttpServletRequest req, HttpServletResponse resp) {
         Integer userId = Integer.parseInt(req.getParameter("userId"));
         List list = specialityService.getListByUserId(userId);
         return new JsonResult<>(list);
     }
+    public JsonResult infoById(HttpServletRequest req, HttpServletResponse resp) {
+        Integer id = Integer.parseInt(req.getParameter("id"));
+        List list = specialityService.getListById(id);
+        return new JsonResult<>(list);
+    }
+
 }
