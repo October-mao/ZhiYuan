@@ -28,6 +28,22 @@
         <servlet-name>SpecialityController</servlet-name>
         <url-pattern>/speciality</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>StudentController</servlet-name>
+        <servlet-class>com.mno.controller.StudentController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentController</servlet-name>
+        <url-pattern>/student</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>VoluntaryController</servlet-name>
+        <servlet-class>com.mno.controller.VoluntaryController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VoluntaryController</servlet-name>
+        <url-pattern>/voluntary</url-pattern>
+    </servlet-mapping>
 
     <filter>
         <filter-name>TokenFilter</filter-name>
