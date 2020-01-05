@@ -9,6 +9,7 @@
  */
 package com.mno.service;
 
+import com.mno.service.impl.SpecialityServiceImpl;
 import com.mno.service.impl.UserServiceImpl;
 
 /**
@@ -22,6 +23,10 @@ import com.mno.service.impl.UserServiceImpl;
 public class FactoryService {
     public static UserService getUserService() {
         return new UserServiceImpl();
+    }
+
+    public static SpecialityService getSpecialityService(){
+        return new SpecialityServiceImpl();
     }
 
 }
