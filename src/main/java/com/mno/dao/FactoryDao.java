@@ -10,6 +10,7 @@
 package com.mno.dao;
 
 import com.mno.dao.impl.SpecialityDaoImpl;
+import com.mno.dao.impl.StudentDaoImpl;
 import com.mno.dao.impl.UserDaoImpl;
 
 /**
@@ -26,5 +27,8 @@ public class FactoryDao {
     }
     public static SpecialityDao getSpecialityDao(){
         return new SpecialityDaoImpl();
+    }
+    public static StudentDao getStudentDao(){
+        return new StudentDaoImpl();
     }
 }

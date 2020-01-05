@@ -13,5 +13,5 @@ public interface StudentDao {
 
     Student getOneById(int id);
 
-
+    Student getOneByUserId(int userid);
 }

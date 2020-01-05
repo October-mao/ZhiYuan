@@ -18,4 +18,10 @@ public class StudentDaoImpl extends BaseDao<Student> implements StudentDao {
         Student oneData = getOneData("select * from user where id=?", id);
         return oneData;
     }
+
+    @Override
+    public Student getOneByUserId(int userid) {
+        Student oneInfo=getOneData("select * from student where userId=?",userid);
+        return oneInfo;
+    }
 }
