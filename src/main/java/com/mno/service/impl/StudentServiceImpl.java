@@ -18,7 +18,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public StudentStuInfoVo getOneByUserId(int userid) {
-        Student student=studentDao.getOneById(userid);
+        Student student=studentDao.getOneByUserId(userid);
         StudentStuInfoVo studentStuInfoVo=new StudentStuInfoVo();
         studentStuInfoVo.setId(student.getId());
         studentStuInfoVo.setMathScore(student.getMathScore());
