@@ -28,10 +28,15 @@ import com.mno.service.VoluntaryService;
 public class VoluntaryServiceImpl implements VoluntaryService {
     VoluntaryDao voluntaryDao = FactoryDao.getVoluntaryDao();
     UserDao userDao = FactoryDao.getUserDao();
+
     @Override
     public VoluntaryListVo getListVoByUserId(int userId) {
         Voluntary voluntary = voluntaryDao.getOneByUserId(userId);
-        VoluntaryListVo vo=new VoluntaryListVo();
+        if (voluntary == null) {
+            voluntaryDao.insertOne(new Voluntary(userId, "未填报"));
+            voluntary = voluntaryDao.getOneByUserId(userId);
+        }
+        VoluntaryListVo vo = new VoluntaryListVo();
         vo.setId(voluntary.getId());
         vo.setStatus(voluntary.getStatus());
         vo.setUpdateTime(voluntary.getUpdateTime());
@@ -39,5 +44,15 @@ public class VoluntaryServiceImpl implements VoluntaryService {
         User user = userDao.getOneById(userId);
         vo.setNickname(user.getNickname());
         return vo;
+    }
+
+    @Override
+    public boolean update(Voluntary voluntary) {
+        return voluntaryDao.updateOne(voluntary);
+    }
+
+    @Override
+    public boolean submit(int userId) {
+        return voluntaryDao.submit(userId);
     }
 }

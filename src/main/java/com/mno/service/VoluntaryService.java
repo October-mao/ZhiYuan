@@ -10,6 +10,7 @@
 package com.mno.service;
 
 import com.mno.bean.vo.VoluntaryListVo;
+import com.mno.model.Voluntary;
 
 /**
  * DESC〈一句话功能简述〉<br>
@@ -21,4 +22,9 @@ import com.mno.bean.vo.VoluntaryListVo;
  */
 public interface VoluntaryService {
     VoluntaryListVo getListVoByUserId(int userId);
+
+    boolean update(Voluntary voluntary);
+
+    boolean submit(int userId);
+
 }

@@ -21,4 +21,10 @@ import com.mno.model.Voluntary;
  */
 public interface VoluntaryDao {
     Voluntary getOneByUserId(int userId);
+
+    boolean insertOne(Voluntary voluntary);
+
+    boolean updateOne(Voluntary voluntary);
+
+    boolean submit(int userId);
 }

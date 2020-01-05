@@ -20,49 +20,54 @@ import java.sql.Timestamp;
  * @since 1.0.0
  */
 public class Voluntary {
-    private Integer id;
-    private Integer userId;
+    private int id;
+    private int userId;
     private String status;
     private String title;
     private Timestamp insertTime;
     private Timestamp updateTime;
-    private Integer speciality1;
-    private Integer speciality2;
-    private Integer speciality3;
-    private Integer speciality4;
-    private Integer speciality5;
-    private Integer speciality6;
-    private Integer speciality7;
-    private Integer speciality8;
-    private Integer speciality9;
-    private Integer speciality10;
-    private Integer speciality11;
-    private Integer speciality12;
-    private Integer speciality13;
-    private Integer speciality14;
-    private Integer speciality15;
-    private Integer speciality16;
-    private Integer speciality17;
-    private Integer speciality18;
-    private Integer speciality19;
-    private Integer speciality20;
+    private int speciality1;
+    private int speciality2;
+    private int speciality3;
+    private int speciality4;
+    private int speciality5;
+    private int speciality6;
+    private int speciality7;
+    private int speciality8;
+    private int speciality9;
+    private int speciality10;
+    private int speciality11;
+    private int speciality12;
+    private int speciality13;
+    private int speciality14;
+    private int speciality15;
+    private int speciality16;
+    private int speciality17;
+    private int speciality18;
+    private int speciality19;
+    private int speciality20;
 
     public Voluntary() {
     }
 
-    public Integer getId() {
+    public Voluntary(int userId, String status) {
+        this.userId = userId;
+        this.status = status;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public Integer getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
@@ -98,163 +103,163 @@ public class Voluntary {
         this.updateTime = updateTime;
     }
 
-    public Integer getSpeciality1() {
+    public int getSpeciality1() {
         return speciality1;
     }
 
-    public void setSpeciality1(Integer speciality1) {
+    public void setSpeciality1(int speciality1) {
         this.speciality1 = speciality1;
     }
 
-    public Integer getSpeciality2() {
+    public int getSpeciality2() {
         return speciality2;
     }
 
-    public void setSpeciality2(Integer speciality2) {
+    public void setSpeciality2(int speciality2) {
         this.speciality2 = speciality2;
     }
 
-    public Integer getSpeciality3() {
+    public int getSpeciality3() {
         return speciality3;
     }
 
-    public void setSpeciality3(Integer speciality3) {
+    public void setSpeciality3(int speciality3) {
         this.speciality3 = speciality3;
     }
 
-    public Integer getSpeciality4() {
+    public int getSpeciality4() {
         return speciality4;
     }
 
-    public void setSpeciality4(Integer speciality4) {
+    public void setSpeciality4(int speciality4) {
         this.speciality4 = speciality4;
     }
 
-    public Integer getSpeciality5() {
+    public int getSpeciality5() {
         return speciality5;
     }
 
-    public void setSpeciality5(Integer speciality5) {
+    public void setSpeciality5(int speciality5) {
         this.speciality5 = speciality5;
     }
 
-    public Integer getSpeciality6() {
+    public int getSpeciality6() {
         return speciality6;
     }
 
-    public void setSpeciality6(Integer speciality6) {
+    public void setSpeciality6(int speciality6) {
         this.speciality6 = speciality6;
     }
 
-    public Integer getSpeciality7() {
+    public int getSpeciality7() {
         return speciality7;
     }
 
-    public void setSpeciality7(Integer speciality7) {
+    public void setSpeciality7(int speciality7) {
         this.speciality7 = speciality7;
     }
 
-    public Integer getSpeciality8() {
+    public int getSpeciality8() {
         return speciality8;
     }
 
-    public void setSpeciality8(Integer speciality8) {
+    public void setSpeciality8(int speciality8) {
         this.speciality8 = speciality8;
     }
 
-    public Integer getSpeciality9() {
+    public int getSpeciality9() {
         return speciality9;
     }
 
-    public void setSpeciality9(Integer speciality9) {
+    public void setSpeciality9(int speciality9) {
         this.speciality9 = speciality9;
     }
 
-    public Integer getSpeciality10() {
+    public int getSpeciality10() {
         return speciality10;
     }
 
-    public void setSpeciality10(Integer speciality10) {
+    public void setSpeciality10(int speciality10) {
         this.speciality10 = speciality10;
     }
 
-    public Integer getSpeciality11() {
+    public int getSpeciality11() {
         return speciality11;
     }
 
-    public void setSpeciality11(Integer speciality11) {
+    public void setSpeciality11(int speciality11) {
         this.speciality11 = speciality11;
     }
 
-    public Integer getSpeciality12() {
+    public int getSpeciality12() {
         return speciality12;
     }
 
-    public void setSpeciality12(Integer speciality12) {
+    public void setSpeciality12(int speciality12) {
         this.speciality12 = speciality12;
     }
 
-    public Integer getSpeciality13() {
+    public int getSpeciality13() {
         return speciality13;
     }
 
-    public void setSpeciality13(Integer speciality13) {
+    public void setSpeciality13(int speciality13) {
         this.speciality13 = speciality13;
     }
 
-    public Integer getSpeciality14() {
+    public int getSpeciality14() {
         return speciality14;
     }
 
-    public void setSpeciality14(Integer speciality14) {
+    public void setSpeciality14(int speciality14) {
         this.speciality14 = speciality14;
     }
 
-    public Integer getSpeciality15() {
+    public int getSpeciality15() {
         return speciality15;
     }
 
-    public void setSpeciality15(Integer speciality15) {
+    public void setSpeciality15(int speciality15) {
         this.speciality15 = speciality15;
     }
 
-    public Integer getSpeciality16() {
+    public int getSpeciality16() {
         return speciality16;
     }
 
-    public void setSpeciality16(Integer speciality16) {
+    public void setSpeciality16(int speciality16) {
         this.speciality16 = speciality16;
     }
 
-    public Integer getSpeciality17() {
+    public int getSpeciality17() {
         return speciality17;
     }
 
-    public void setSpeciality17(Integer speciality17) {
+    public void setSpeciality17(int speciality17) {
         this.speciality17 = speciality17;
     }
 
-    public Integer getSpeciality18() {
+    public int getSpeciality18() {
         return speciality18;
     }
 
-    public void setSpeciality18(Integer speciality18) {
+    public void setSpeciality18(int speciality18) {
         this.speciality18 = speciality18;
     }
 
-    public Integer getSpeciality19() {
+    public int getSpeciality19() {
         return speciality19;
     }
 
-    public void setSpeciality19(Integer speciality19) {
+    public void setSpeciality19(int speciality19) {
         this.speciality19 = speciality19;
     }
 
-    public Integer getSpeciality20() {
+    public int getSpeciality20() {
         return speciality20;
     }
 
-    public void setSpeciality20(Integer speciality20) {
+    public void setSpeciality20(int speciality20) {
         this.speciality20 = speciality20;
     }
 }
