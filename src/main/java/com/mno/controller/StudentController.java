@@ -1,6 +1,7 @@
 package com.mno.controller;
 
 import com.mno.bean.JsonResult;
+import com.mno.bean.vo.StudentStuInfoVo;
 import com.mno.model.Student;
 import com.mno.service.FactoryService;
 import com.mno.service.StudentService;
@@ -12,7 +13,7 @@ public class StudentController extends BaseServlet {
     StudentService studentService= FactoryService.getStudentService();
     public JsonResult stuInfo(HttpServletRequest req, HttpServletResponse resp){
         Integer userId = (Integer) req.getSession().getAttribute("userId");
-        Student student=studentService.getOneByUserId(userId);
+        StudentStuInfoVo student=studentService.getOneByUserId(userId);
         return new JsonResult(student);
     }
 }
